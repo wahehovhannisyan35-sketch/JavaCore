@@ -6,6 +6,12 @@ public class EmployeeDemo {
 
     private static Scanner scanner = new Scanner(System.in);
     private static EmployeeStroga employeeStroga = new EmployeeStroga();
+    private static final String EXIT="0";
+    private static final String ADD_EMPLOYEE="1";
+    private static final String PRINT_ALL_EMPLOYEE="2";
+    private static final String SEARCH_EMPLOYEE_BY_EMPLOYEE_ID="3";
+    private static final String SEARCH_EMPLOYEE_BY_COMPANY_NAME="4";
+    private static final String SEARCH_EMPLOYEE_BY_POSITION_LEVEL="5";
 
     static void main() {
 
@@ -14,16 +20,16 @@ public class EmployeeDemo {
             printCommands();
             String command = scanner.nextLine();
             switch (command) {
-                case "0":
+                case EXIT:
                     isRun = false;
                     break;
-                case "1":
+                case ADD_EMPLOYEE:
                     addEmployee();
                     break;
-                case "2":
+                case PRINT_ALL_EMPLOYEE:
                     employeeStroga.print();
                     break;
-                case "3":
+                case SEARCH_EMPLOYEE_BY_EMPLOYEE_ID:
                     System.out.println("Please input employee's ID for search employee");
                     String searchId = scanner.nextLine();
                     try {
@@ -33,12 +39,12 @@ public class EmployeeDemo {
                         System.out.println(e.getMessage());
                     }
                     break;
-                case "4":
+                case SEARCH_EMPLOYEE_BY_COMPANY_NAME:
                     System.out.println("Please input company's name for search");
                     String compane = scanner.nextLine();
                     employeeStroga.searchCompane(compane);
                     break;
-                case "5":
+                case SEARCH_EMPLOYEE_BY_POSITION_LEVEL:
                     System.out.println("Please input Employee's level for search");
                     printLevels();
                     String level = scanner.nextLine();
@@ -72,12 +78,12 @@ public class EmployeeDemo {
     }
 
     private static void printCommands() {
-        System.out.println("Please input 0 for EXIT");
-        System.out.println("Please input 1 for ADD EMPLOYEE ");
-        System.out.println("Please input 2 for PRINT ALL EMPLOYEE");
-        System.out.println("Please input 3 for SEARCH EMPLOYEE BY EMPLOYEE ID ");
-        System.out.println("Please input 4 for SEARCH EMPLOYEE BY COMPANY NAME ");
-        System.out.println("Please input 5 for SEARCH EMPLOYEES BY POSITION LEVEL ");
+        System.out.println("Please input "+EXIT+" for EXIT");
+        System.out.println("Please input "+ADD_EMPLOYEE+" for ADD EMPLOYEE ");
+        System.out.println("Please input "+PRINT_ALL_EMPLOYEE+" for PRINT ALL EMPLOYEE");
+        System.out.println("Please input "+SEARCH_EMPLOYEE_BY_EMPLOYEE_ID+" for SEARCH EMPLOYEE BY EMPLOYEE ID ");
+        System.out.println("Please input "+SEARCH_EMPLOYEE_BY_COMPANY_NAME+" for SEARCH EMPLOYEE BY COMPANY NAME ");
+        System.out.println("Please input "+SEARCH_EMPLOYEE_BY_POSITION_LEVEL+" for SEARCH EMPLOYEES BY POSITION LEVEL ");
     }
 
     private static void printLevels() {
