@@ -93,16 +93,4 @@ public class Employee {
         return Objects.hash(name, surname, emplyeeID, salary, company, position, level);
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", emplyeeID='" + emplyeeID + '\'' +
-                ", salary=" + salary +
-                ", company='" + company + '\'' +
-                ", position='" + position + '\'' +
-                ", level=" + level +
-                '}';
-    }
 }

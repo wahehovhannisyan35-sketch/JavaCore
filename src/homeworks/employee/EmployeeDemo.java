@@ -75,6 +75,7 @@ public class EmployeeDemo {
         Employee employee = new Employee(name, surname, salary, company, position,positionLevel);
         employeeStroga.add(employee);
         System.out.println("employee added successfully");
+
     }
 
     private static void printCommands() {
